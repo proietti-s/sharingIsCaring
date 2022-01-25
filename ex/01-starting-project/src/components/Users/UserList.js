@@ -7,14 +7,14 @@ import styles from './UserList.module.css'
 const UserList = props => {
 
 
-return (
-    <Card className={styles.users}>
-        <ul>
-            <li>{props.username}</li>
-            <li>{props.age}</li>
-        </ul>
-    </Card>
-)
+    return (
+        <Card className={styles.users}>
+            <ul>
+                {props.users.map(user =>
+                    <li key={user.id}>{user.name} ({user.age} years old)</li>)}
+            </ul>
+        </Card>
+    )
 }
 
 export default UserList;
